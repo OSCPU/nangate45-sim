@@ -9,6 +9,7 @@ verilog:
 	$(call git_commit, "generate verilog")
 	mkdir -p $(BUILD_DIR)
 	mill -i __.test.runMain Elaborate -td $(BUILD_DIR)
+	cp build/Nangate45StdCell.v generated/
 
 help:
 	mill -i __.test.runMain Elaborate --help
