@@ -150,7 +150,7 @@ class XOR2_X1 extends XOR2; class XOR2_X2 extends XOR2;
 
 
 
-class Top extends Module {
+class Nangate45StdCell extends Module {
   val io = IO(new Bundle {})
 
   List(
@@ -216,7 +216,7 @@ class Top extends Module {
 
 object Elaborate extends App {
   List(
-    () => new Top,
+    () => new Nangate45StdCell,
   ).map(top => {
     val generator = Seq(chisel3.stage.ChiselGeneratorAnnotation(top))
     (new chisel3.stage.ChiselStage).execute(args ++ Array("--no-dedup"), generator)
